@@ -1,0 +1,104 @@
+package han.Chensing.Satellite;
+
+import android.app.*;
+import android.os.*;
+import android.support.v4.widget.*;
+import android.view.*;
+import android.widget.*;
+import android.location.*;
+import android.content.*;
+import java.util.*;
+
+public class MainActivity extends Activity 
+{
+	
+	LocationManager lm;
+	
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+		
+		SwipeRefreshLayout srl=(SwipeRefreshLayout)findViewById(R.id.mainsrl);
+		srl.setEnabled(false);
+		srl.setColorSchemeResources(
+			android.R.color.holo_blue_bright,
+			android.R.color.holo_green_light,
+			android.R.color.holo_orange_light,
+			android.R.color.holo_red_light);
+		lm=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
+    }
+	
+	
+	public void start(View v){
+		ToggleButton tb=(ToggleButton)findViewById(R.id.mainstart);
+		if(tb.isChecked()){
+			
+			if(!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+				Toast.makeText(this,"请开启GPS",Toast.LENGTH_LONG).show();
+			}
+			
+			lm.requestLocationUpdates(lm.GPS_PROVIDER,1000,0,ll);
+		}else{
+			
+		}
+	}
+	
+	private LocationListener ll=new LocationListener(){
+		@Override
+		public void onLocationChanged(Location lo){}
+		@Override
+		public void onStatusChanged(String pro,int stat,Bundle ext){}
+		@Override
+		public void onProviderEnabled(String pro){}
+		@Override
+		public void onProviderDisabled(String pro){}
+	};
+	
+	private GpsStatus.Listener gs=new GpsStatus.Listener(){
+
+		@Override
+		public void onGpsStatusChanged(int p1)
+		{
+			if(GpsStatus.GPS_EVENT_SATELLITE_STATUS==p1){
+				GpsStatus gs=lm.getGpsStatus(null);
+				int maxwx=gs.getMaxSatellites();
+				java.util.Iterator<GpsSatellite> it=gs.getSatellites().iterator();
+				for(int i=0;it.hasNext() && i<=maxwx;i++){
+					GpsSatellite gsa=it.next();
+					
+				}
+			}
+		}
+	};
+	
+	private void change(GpsSatellite gs,int num){
+		ListView lv=(ListView)findViewById(R.id.mainlv);
+		//ArrayList<String> al=new ArrayList<>();
+		StringBuilder al=new StringBuilder();
+		al.add("卫星"+num);
+		al.add("\n方位角:"+gs.getAzimuth());
+		al.add("\n高度角:"+gs.getElevation());
+		al.add("\n信噪比:"+gs.getSnr());
+		al.add("\n伪随机噪声码:"+gs.getPrn());
+		if(gs.hasAlmanac()){
+			al.add("\nGPS引擎有近似轨道信息");
+		}else{
+			al.add("\nGPS引擎无近似轨道信息");
+		}
+		if(gs.hasEphemeris()){
+			al.add("\nGPS引擎有卫星星历");
+		}else{
+			al.add("\nGPS引擎无卫星星历");
+		}
+		if(gs.usedInFix()){
+			al.add("\n卫星被GPS引擎用于计算最近位置");
+		}else{
+			al.add("\n卫星被GPS引擎不用于计算最近位置");
+		}
+		ListAdapter la=new ArrayAdapter<String>(this,R.layout.list,al);
+		lv.setAdapter(la);
+	}
+}

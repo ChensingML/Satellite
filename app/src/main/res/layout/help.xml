@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="250dp">
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="10dp">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="帮助"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:textSize="25sp"/>
+
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Question &amp; Answer"
+				android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="1.刷新的时候，进度条始终在转动"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="如果碰到这种情况，基本上是定位服务没有设置好，解决方法是：打开系统的定位服务，检查是否打开；如果问题依旧，请打开系统的定位服务设置，然后选中“仅使用GPS定位”或者“使用GPS、WLAN和移动网络定位”，回到本软件，然后重新启动定位。"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_marginLeft="10dp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="2.屏幕显示“请打开GPS”"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="请参照第一条帮助来解决问题。"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_marginLeft="10dp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="3.进度条每次总是要转动很久才可以搜到卫星"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="本软件的作用是搜索GPS卫星，因此需要到室外空旷处使用来获取最佳的体验，有时您只需要靠窗或把手机伸出窗外（确保安全的情况下）就可搜寻到卫星。"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_marginLeft="10dp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="4.完全搜不到卫星，刷新无济于事"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="请参照第一条帮助来解决问题。"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_marginLeft="10dp"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>
+

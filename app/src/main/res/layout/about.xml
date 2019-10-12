@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:padding="20dp">
+
+	<ImageView
+		android:src="@drawable/ic_launcher"
+		android:layout_width="wrap_content"
+		android:layout_height="100dp"
+		android:scaleType="fitCenter"
+		android:layout_gravity="center"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Satellite"
+		android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="10dp">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Copyright (c) Chen.ZH 2019"
+			android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Satellite是由Chen.ZH开发的一款适用于Android平台的GPS卫星搜寻软件，可以获取当前可搜寻到的GPS卫星的基本信息"
+			android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:layout_marginTop="10dp">
+
+			<ImageView
+				android:src="@drawable/ic_warning_black_48dp"
+				android:layout_width="25dp"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="10dp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="注意：本软件仅供软件及天文爱好者学习使用，请勿用于任何非法途径，违者后果自负！"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:textColor="#FF0F00"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
+

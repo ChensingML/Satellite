@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<ImageView
+		android:src="@drawable/pic"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:scaleType="centerCrop"
+		android:adjustViewBounds="true"/>
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/xu">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="设置"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:textSize="25sp"/>
+
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="10dp">
+
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center">
+
+				<EditText
+					android:layout_width="150dp"
+					android:inputType="number"
+					android:layout_height="wrap_content"
+					android:ems="10"
+					android:hint="刷新间隔 (ms)"
+					android:text="1000"
+					android:id="@+id/menurefjg"/>
+
+				<LinearLayout
+					android:orientation="vertical"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content">
+
+					<CheckBox
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="自动刷新"
+						android:checked="true"
+						android:id="@+id/menuautoref"
+						android:onClick="autof"/>
+
+					<CheckBox
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="不间断更新"
+						android:onClick="bjd"
+						android:id="@+id/menubjd"/>
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+			<Button
+				android:layout_width="wrap_content"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:text="恢复默认值"
+				android:textColor="#2BB800"
+				android:onClick="backno"/>
+
+			<Button
+				android:layout_width="wrap_content"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:text="帮助"
+				android:onClick="help"/>
+
+			<Button
+				android:layout_width="wrap_content"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:text="关于"
+				android:onClick="about"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
+
